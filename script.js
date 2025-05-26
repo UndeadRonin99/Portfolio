@@ -32,4 +32,20 @@ function erase() {
 
 document.addEventListener("DOMContentLoaded", type);
 
+const projectBlocks = document.querySelectorAll('.project-content');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+projectBlocks.forEach(block => {
+  observer.observe(block);
+});
+
+
 
