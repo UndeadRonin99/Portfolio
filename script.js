@@ -47,5 +47,11 @@ projectBlocks.forEach(block => {
   observer.observe(block);
 });
 
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('light-theme');
+  themeToggle.textContent = document.body.classList.contains('light-theme') ? '🌙' : '☀️';
+});
+
 
 
