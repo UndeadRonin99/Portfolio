@@ -5,16 +5,33 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg-color: #0f0f1a;
+  --text-color: #f0f0f0;
+  --primary-color: #00fff7;
+  --secondary-bg: #1a1a2e;
+  --nav-bg: #111;
+}
+
+.light-theme {
+  --bg-color: #f5f5f5;
+  --text-color: #222;
+  --primary-color: #0078d7;
+  --secondary-bg: #ffffff;
+  --nav-bg: #e0e0e0;
+}
+
 body {
   font-family: 'JetBrains Mono', monospace;
-  background: #0f0f1a;
-  color: #f0f0f0;
+  background: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  transition: background 0.3s, color 0.3s;
 }
 
 a {
-  color: #00fff7;
+  color: var(--primary-color);
   text-decoration: none;
 }
 
@@ -28,8 +45,8 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: #111;
-  border-bottom: 1px solid #00fff7;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .logo {
@@ -38,7 +55,7 @@ nav {
 }
 
 .logo span {
-  color: #00fff7;
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -51,14 +68,23 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #00fff7;
+  color: var(--primary-color);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-left: 1rem;
 }
 
 /* === Hero Section === */
 .hero {
   text-align: center;
   padding: 5rem 2rem;
-  background: radial-gradient(circle at top left, #1e1e2f, #0f0f1a);
+  background: radial-gradient(circle at top left, #1e1e2f, var(--bg-color));
 }
 
 .hero h2 {
@@ -67,22 +93,22 @@ nav {
 }
 
 .hero .accent {
-  color: #00fff7;
+  color: var(--primary-color);
 }
 
 .cta-button {
   display: inline-block;
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
-  border: 1px solid #00fff7;
-  color: #00fff7;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
   background: transparent;
   transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-  background: #00fff7;
-  color: #0f0f1a;
+  background: var(--primary-color);
+  color: var(--bg-color);
 }
 
 /* === Sections === */
@@ -95,15 +121,15 @@ nav {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  border-left: 4px solid #00fff7;
+  border-left: 4px solid var(--primary-color);
   padding-left: 0.5rem;
 }
 
 .project-card {
-  background: #1a1a2e;
+  background: var(--secondary-bg);
   padding: 1.5rem;
   margin-top: 1rem;
-  border-left: 3px solid #00fff7;
+  border-left: 3px solid var(--primary-color);
   transition: transform 0.3s;
 }
 
@@ -115,18 +141,18 @@ nav {
 footer {
   text-align: center;
   padding: 2rem;
-  background: #111;
+  background: var(--nav-bg);
   font-size: 0.875rem;
   color: #aaa;
 }
 
 /* === Contact Form Styling === */
 .contact-form {
-  background: #1a1a2e;
+  background: var(--secondary-bg);
   padding: 2rem;
-  border: 1px solid #00fff7;
+  border: 1px solid var(--primary-color);
   border-radius: 10px;
-  box-shadow: 0 0 10px #00fff7;
+  box-shadow: 0 0 10px var(--primary-color);
   max-width: 700px;
   margin: auto;
 }
@@ -134,9 +160,9 @@ footer {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  background: #0f0f1a;
-  border: 1px solid #00fff7;
-  color: #f0f0f0;
+  background: var(--bg-color);
+  border: 1px solid var(--primary-color);
+  color: var(--text-color);
   padding: 0.75rem 1rem;
   margin-top: 1rem;
   border-radius: 5px;
@@ -163,8 +189,8 @@ footer {
 .btn-primary {
   margin-top: 1.5rem;
   background: transparent;
-  border: 1px solid #00fff7;
-  color: #00fff7;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-family: 'JetBrains Mono', monospace;
@@ -174,8 +200,8 @@ footer {
 }
 
 .btn-primary:hover {
-  background: #00fff7;
-  color: #0f0f1a;
+  background: var(--primary-color);
+  color: var(--bg-color);
 }
 
 .project-row {
@@ -192,8 +218,8 @@ footer {
 
 .project-text {
   flex: 1;
-  background: #1a1a2e;
-  border-left: 4px solid #00fff7;
+  background: var(--secondary-bg);
+  border-left: 4px solid var(--primary-color);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 0 15px #00fff73f;
@@ -202,16 +228,16 @@ footer {
 
 .project-text h3 {
   margin-bottom: 0.75rem;
-  color: #00fff7;
+  color: var(--primary-color);
 }
 
 .project-text p {
   margin-bottom: 1rem;
-  color: #f0f0f0;
+  color: var(--text-color);
 }
 
 .project-text a {
-  color: #00fff7;
+  color: var(--primary-color);
   font-weight: bold;
   text-decoration: none;
 }
@@ -245,21 +271,21 @@ html {
 
 /* === Alternate Backgrounds === 
 .section:nth-of-type(even) {
-  background: linear-gradient(to right, #0f0f1a, #1a1a2e);
+  background: linear-gradient(to right, var(--bg-color), var(--secondary-bg));
 }
 .section:nth-of-type(odd) {
-  background: #0f0f1a;
+  background: var(--bg-color);
 }
 
 /* === Section Headings Glow === */
 .section h2 {
-  text-shadow: 0 0 10px #00fff7;
+  text-shadow: 0 0 10px var(--primary-color);
 }
 
 
 /* === Animated Hero Background === */
 .hero {
-  background: linear-gradient(135deg, #1e1e2f, #0f0f1a);
+  background: linear-gradient(135deg, #1e1e2f, var(--bg-color));
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
 }
@@ -313,9 +339,9 @@ html {
 
 .project-content {
   max-width: 550px;
-  background: #1a1a2e;
+  background: var(--secondary-bg);
   padding: 2rem;
-  border-left: 4px solid #00fff7;
+  border-left: 4px solid var(--primary-color);
   border-radius: 10px;
   box-shadow: 0 0 15px #00fff75a;
   animation: fadeUp 1s ease forwards;
@@ -325,16 +351,16 @@ html {
 
 .project-content h3 {
   margin-bottom: 0.75rem;
-  color: #00fff7;
+  color: var(--primary-color);
 }
 
 .project-content p {
   margin-bottom: 1rem;
-  color: #f0f0f0;
+  color: var(--text-color);
 }
 
 .project-content a {
-  color: #00fff7;
+  color: var(--primary-color);
   font-weight: bold;
   text-decoration: none;
 }
@@ -367,16 +393,16 @@ html {
 .about-box {
   flex: 1;
   min-width: 250px;
-  background: #1a1a2e;
+  background: var(--secondary-bg);
   padding: 1.5rem;
   border-radius: 10px;
-  border-left: 4px solid #00fff7;
+  border-left: 4px solid var(--primary-color);
   box-shadow: 0 0 10px #00fff72e;
 }
 
 .about-box h3 {
   margin-bottom: 0.75rem;
-  color: #00fff7;
+  color: var(--primary-color);
 }
 
 .about-box ul {
