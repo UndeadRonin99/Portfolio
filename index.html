@@ -4,199 +4,109 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Portfolio of Nicholas Malan – Full‑Stack Developer and Software Architect." />
+    <meta name="keywords"
+        content="Nicholas Malan, portfolio, full‑stack developer, Kotlin, .NET, JavaScript, Firebase" />
+    <meta name="author" content="Nicholas Malan" />
+    <title>Nicholas Malan | Portfolio</title>
+    <link rel="canonical" href="https://nicholasmalan.dev" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-N8CahDQD3v9iSrvjGhqvktFtuqSBmJg6hj9tbfOMnMmT+UDIqHuAxJTF3i2ItXUgjHt2d9y1A40XMk8pKeAa0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Main Styles -->
     <link rel="stylesheet" href="style.css" />
+
+    <link href="script.js" />
+
 </head>
 
 <body>
+    <!-- ================= HEADER & HERO ================= -->
     <div id="particles-js"></div>
+    <div id=" particles-js"></div> <!-- stats - count particles -->
+    <!-- particles.js lib - https://github.com/VincentGarreau/particles.js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib -->
+    <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
-    <header>
-        <nav>
-            <h1 class="logo">_Nicholas<span>.dev</span></h1>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <!--<button id="theme-toggle" aria-label="Toggle theme">☀️</button>-->
-        </nav>
-        <section class="hero">
-            <h2>Hello, I'm <span class="accent">Nicholas</span></h2>
-            <p class="typewriter" id="typing-text"></p>
-            <a href="#projects" class="cta-button">See My Work</a>
-        </section>
-    </header>
 
-    <main>
-        <section id="about" class="section fade-in-up">
-            <h2>About Me</h2>
+    <div id="real-body">
+        <header>
+            <nav class="container">
+                <h1 class="logo"><a href="#home">Nicholas<span>.is-a.dev</span></a></h1>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-            <p class="about-intro">
-                I'm Nicholas, a full-stack developer and aspiring software architect based in South Africa.
-                I specialize in crafting performant and secure digital systems that solve real-world problems.
-                Whether it's Android apps, web platforms, or APIs, I’m driven by a passion for building clean,
-                scalable tech — with a touch of futuristic flair.
-            </p>
-
-            <div class="about-columns">
-                <div class="about-box">
-                    <h3>🧠 Core Skills</h3>
-                    <ul>
-                        <li>Android Development (Kotlin, XML, Gradle)</li>
-                        <li>Web Development (ASP.NET Core, React, Express.js)</li>
-                        <li>Backend (Node.js, Firebase, SQL, MongoDB)</li>
-                        <li>DevOps (CI/CD, GitHub Actions, CircleCI)</li>
-                    </ul>
+            <section id="home" class="hero container">
+                <div class="hero-content">
+                    <h2>Hi, I'm <span class="accent">Nicholas Malan</span></h2>
+                    <h3><span id="typed"></span></h3>
+                    <p>Crafting robust, secure, and elegant digital experiences.</p>
+                    <a href="#projects" class="btn primary">See My Work</a>
                 </div>
+            </section>
+        </header>
 
-                <div class="about-box">
-                    <h3>🌱 What I'm Learning</h3>
-                    <ul>
-                        <li>Containerization (Docker, Kubernetes)</li>
-                        <li>Advanced CI/CD Pipelines</li>
-                        <li>Design Systems & UI Animation</li>
-                        <li>Cloud Architecture (Azure & GCP)</li>
-                    </ul>
+        <!-- ================= MAIN ================= -->
+        <main>
+            <!-- About Section -->
+            <section id="about" class="about container" data-aos="fade-up">
+                <h2>About Me</h2>
+                <p>
+                    I'm a South African full‑stack developer with a passion for creating performant web and mobile
+                    software.
+                    With expertise across Kotlin, .NET, JavaScript, and Firebase, I turn complex problems into
+                    delightful
+                    experiences.
+                </p>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="projects container">
+                <h2 data-aos="fade-up">Featured Projects</h2>
+                <div id="projects-container" class="projects-grid" data-aos="fade-up" data-aos-delay="100">
+                    <!-- Cards injected by script.js -->
                 </div>
+            </section>
 
-                <div class="about-box">
-                    <h3>🎮 Fun Facts</h3>
-                    <ul>
-                        <li>I swam for the South African national team 🏊</li>
-                        <li>I've built and published a full gym management system</li>
-                        <li>I drink too much monster and write a lot of clean code ☕</li>
-                        <li>Favorite languages: Kotlin, C#, JavaScript</li>
-                    </ul>
-                </div>
-            </div>
+            <!-- Contact Section -->
+            <section id="contact" class="contact container" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>Got an opportunity or just want to say hi? Let's chat.</p>
+                <a href="mailto:nic@devignite.co.za" class="btn secondary"><i class="fa-solid fa-envelope"></i> Email
+                    Me</a>
+                <a href="https://www.linkedin.com/in/nicholas-malan-452279251/" target="_blank" rel="noopener"
+                    class="btn secondary">
+                    <i class="fa-brands fa-linkedin"></i> LinkedIn
+                </a>
+            </section>
+        </main>
 
-            <div class="about-stack-icons">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg"
-                    alt="Firebase">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
-                    alt="JS">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET">
-            </div>
-        </section>
+        <!-- ================= FOOTER ================= -->
+        <footer>
+            <p></span> Nicholas Malan. Built with ♥ by <a href="https://devignite.co.za">devignite.co.za</a></p>
+        </footer>
 
+        <!-- External JS Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-        <section id="projects" class="section">
-            <h2>Projects</h2>
-
-            <div class="project-block fade-in">
-                <div class="project project-left">
-                    <div class="project-content">
-                        <h3>Fusion: Meal Planning & Recipe App</h3>
-                        <p>A mobile app that streamlines meal planning and recipe management with Firebase auth, grocery
-                            list automation, and multi-language support.</p>
-                        <a href="https://github.com/UndeadRonin99/Fusion" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project project-right">
-                    <div class="project-content">
-                        <h3>Fusion API</h3>
-                        <p>Backend for the Fusion app with recipe APIs, Firebase user handling, and grocery list logic.
-                            Hosted on Render.</p>
-                        <a href="https://github.com/UndeadRonin99/Fusion-API" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project project-left">
-                    <div class="project-content">
-                        <h3>ClockIT: Time Management System</h3>
-                        <p>Spring Boot app for tracking tasks and time spent. Built with Java and MySQL. Great for
-                            productivity analysis.</p>
-                        <a href="https://github.com/UndeadRonin99/ClockIT" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project project-right">
-                    <div class="project-content">
-                        <h3>Alleysway (Web – ASP.NET Core)</h3>
-                        <p>Multi-role gym booking system with Google OAuth and Firebase. Admin/Client views, real-time
-                            session control.</p>
-                        <a href="https://github.com/UndeadRonin99/Alleysway-Web" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project project-left">
-                    <div class="project-content">
-                        <h3>Alleysway (Android App)</h3>
-                        <p>Kotlin app for booking gym sessions on Android. Firebase login and session sync built-in.</p>
-                        <a href="https://github.com/UndeadRonin99/Alleysway-App" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-
-                <div class="project project-right">
-                    <div class="project-content">
-                        <h3>Payment Portal (Full Stack)</h3>
-                        <p>Secure React + Express.js payment system with JWT login, CircleCI integration, and MongoDB
-                            backend.</p>
-                        <a href="https://github.com/UndeadRonin99/Payment-Portal" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section id="contact" class="section">
-            <h2>Contact Me</h2>
-            <form id="contactForm" class="contact-form">
-                <div class="input-row">
-                    <input type="text" id="firstName" name="firstName" placeholder="First Name*" required>
-                    <input type="text" id="lastName" name="lastName" placeholder="Last Name*" required>
-                </div>
-                <input type="email" id="email" name="email" placeholder="Email*" required
-                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
-                <input type="tel" id="phone" name="phone" placeholder="Phone Number*" required>
-                <textarea id="message" name="message" rows="4" placeholder="Your message..." required></textarea>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
-        </section>
-
-        <!-- EMAILJS SCRIPT -->
-        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                emailjs.init("1g5XST-NKnCjiOrlU");
-                document.getElementById('contactForm').addEventListener('submit', function (event) {
-                    event.preventDefault();
-                    emailjs.sendForm('service_5vlbysn', 'template_clx0alc', this)
-                        .then(() => alert('SUCCESS! Your message has been sent.'))
-                        .catch(() => alert('FAILED... Please try again.'));
-                });
-            });
-        </script>
-    </main>
-
-    <footer>
-        <p>© 2025 Nicholas Malan. All rights reserved.</p>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 200 },
-                "color": { "value": "#00fff7" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.2 },
-                "size": { "value": 2 },
-                "move": { "enable": true, "speed": 1 }
-            },
-            "interactivity": {
-                "events": { "onhover": { "enable": true, "mode": "repulse" } }
-            },
-            "retina_detect": true
-        });
-    </script>
-
+        <!-- Main Script -->
+        <script src="script.js"></script>
+    </div>
 </body>
 
 </html>
