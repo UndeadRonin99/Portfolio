@@ -1,0 +1,17 @@
+Place your images and assets in this folder.
+
+Suggested assets:
+- hero-bg.jpg (dark, abstract hero background — 1920×1080+)
+- project thumbnails (optional)
+- noise.png (subtle noise texture — 200×200, tileable)
+- favicon.ico / favicon.svg
+- nicholas-malan.jpg (headshot, optional)
+- devignite-logo.svg (brand mark, optional)
+
+Included in this repo:
+- assets/projects/alleysway-app.svg
+- assets/projects/alleysway-website.svg
+- assets/projects/fusion-app.svg
+- assets/projects/fusion-api.svg
+- assets/projects/municipal-services.svg
+- assets/projects/payment-portal.svg

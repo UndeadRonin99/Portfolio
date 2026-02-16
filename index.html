@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicholas Malan — Software Engineer</title>
+  <meta name="description" content="Portfolio of Nicholas Malan — Software Engineer at IAT Fusion & co-founder of DevIgnite." />
+  <meta name="theme-color" content="#0a0a0c" />
+
+  <!-- Fonts (Inter + JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/favicons/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicons/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/favicons/android-chrome-512x512.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-loading">
+
+  <!-- ═══════════════════════════════════════
+       INTRO LOADER
+       ═══════════════════════════════════════ -->
+  <div id="intro-loader" class="loader" role="status" aria-label="Loading portfolio">
+    <span class="loader__brand" aria-hidden="true">NM</span>
+    <div class="loader__bar" aria-hidden="true"><div class="loader__bar-fill"></div></div>
+    <button id="skip-intro" class="loader__skip" aria-label="Skip intro animation">Skip intro</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       STICKY NAV
+       ═══════════════════════════════════════ -->
+  <nav id="sticky-nav" class="sticky-nav" aria-label="Site navigation">
+    <span id="nav-monogram" class="nav-monogram" aria-hidden="true"></span>
+    <button class="nav-contact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Contact
+    </button>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       SIDE PROGRESS
+       ═══════════════════════════════════════ -->
+  <aside class="scroll-progress" aria-hidden="true">
+    <div class="progress-bar">
+      <div id="progress-fill" class="progress-bar__fill"></div>
+    </div>
+    <div id="section-dots" class="section-dots"></div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CONTENT SECTIONS
+       All inner HTML is rendered by main.js
+       from the CONTENT object in content.js
+       ═══════════════════════════════════════ -->
+  <main>
+    <section id="hero"         class="section" aria-label="Hero introduction"></section>
+    <section id="split-story"  class="section" aria-label="IAT Fusion and DevIgnite story"></section>
+    <section id="skills"       class="section" aria-label="Skills toolbelt"></section>
+    <section id="projects"     class="section" aria-label="Featured projects"></section>
+    <section id="process"      class="section" aria-label="How I build — process timeline"></section>
+    <section id="offerings"    class="section" aria-label="DevIgnite offerings"></section>
+    <section id="contact"      class="section" aria-label="Contact and social links"></section>
+  </main>
+
+  <!-- ═══════════════════════════════════════
+       FOOTER (appears at the end)
+       ═══════════════════════════════════════ -->
+  <footer class="site-footer">
+    &copy; 2026 Nicholas Malan &middot; DevIgnite. All rights reserved.
+  </footer>
+
+  <!-- ═══════════════════════════════════════
+       SCRIPTS (order matters)
+       ═══════════════════════════════════════ -->
+  <script src="js/content.js"></script>
+  <script src="js/scroll-engine.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
