@@ -1338,15 +1338,64 @@ body.offerings-active {
   }
   .hero__brand { height: 20px; max-width: 160px; }
 
-  /* Split story → stacked */
+  /* Split story → stacked vertically */
+  #split-story {
+    min-height: 260vh;
+  }
   .split__container {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
+    top: 8vh;
+    max-width: 100%;
+    padding: 0 4px;
+    position: sticky;
+  }
+  .split__col {
+    padding: 28px 20px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+  }
+  .split__title {
+    font-size: clamp(1.4rem, 5vw, 2rem);
+  }
+  .split__subtitle {
+    font-size: 0.9rem;
+  }
+  .split__points li {
+    font-size: 0.88rem;
+    margin-bottom: 10px;
   }
   .split__divider { display: none; }
   .split__highlight { display: none; }
-
   .split__logo { height: 22px; max-width: 200px; }
+
+  /* Curtains become full-width and animate vertically on mobile */
+  .split__curtain {
+    width: 100%;
+    /* Blue covers bottom card (devignite), orange covers top card (iat) */
+  }
+  .split__curtain--blue {
+    /* Cover the second (DevIgnite) column area */
+    top: auto;
+    bottom: 0;
+    right: auto;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    transform-origin: center top;   /* shrinks upward toward center */
+    border-radius: 0 0 14px 14px;
+  }
+  .split__curtain--orange {
+    /* Grows downward from center to cover IAT column */
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    transform-origin: center bottom; /* grows downward */
+    transform: scaleY(0);
+    border-radius: 14px 14px 0 0;
+  }
 
   /* Skills track */
   .skills__pillar {
@@ -1374,4 +1423,20 @@ body.offerings-active {
   .hero__name { font-size: 2.5rem; }
   .offerings__grid { grid-template-columns: 1fr; }
   .contact__links { flex-direction: column; align-items: center; }
+
+  /* Split story — extra small */
+  .split__col {
+    padding: 22px 16px;
+  }
+  .split__title {
+    font-size: 1.3rem;
+  }
+  .split__points li {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+  .split__label {
+    font-size: 0.62rem;
+    margin-bottom: 12px;
+  }
 }

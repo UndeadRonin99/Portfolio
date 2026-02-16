@@ -421,6 +421,8 @@
     const orangeCurtain = $('.split__curtain--orange', el);
     const divider = $('.split__divider', el);
 
+    const isMobile = () => window.innerWidth <= 768;
+
     engine.register({
       element: el,
       id: 'split-story',
@@ -436,31 +438,47 @@
           return;
         }
 
-        /* ── Phase 1 (p 0→0.5): Blue curtain covers right side, shrinks toward center ── */
-        const phase1 = clamp(p / 0.5, 0, 1);             // 0→1 during first half
-        const blueScale = 1 - phase1;                      // 1→0 (shrinks toward center)
-        blueCurtain.style.transform = `scaleX(${blueScale})`;
+        const mobile = isMobile();
+        // On mobile: curtains scale on Y axis (vertical stacking)
+        // On desktop: curtains scale on X axis (side-by-side)
+        const scaleProp = mobile ? 'scaleY' : 'scaleX';
+        const slideProp = mobile ? 1 : 0; // 0 = X axis, 1 = Y axis
+
+        /* ── Phase 1 (p 0→0.5): Blue curtain shrinks toward center ── */
+        const phase1 = clamp(p / 0.5, 0, 1);
+        const blueScale = 1 - phase1;
+        blueCurtain.style.transform = `${scaleProp}(${blueScale})`;
         blueCurtain.style.opacity = blueScale > 0.01 ? '1' : '0';
 
         /* DevIgnite column fades in as blue curtain clears */
         devCol.style.opacity = String(clamp(phase1, 0, 1));
-        devCol.style.transform = `translate3d(${(1 - phase1) * 20}px, 0, 0)`;
+        if (mobile) {
+          devCol.style.transform = `translate3d(0, ${(1 - phase1) * 15}px, 0)`;
+        } else {
+          devCol.style.transform = `translate3d(${(1 - phase1) * 20}px, 0, 0)`;
+        }
 
-        /* Divider fades in once both sides are visible */
-        if (divider) divider.style.opacity = String(clamp(phase1 * 1.4 - 0.3, 0, 1));
+        /* Divider fades in (desktop only) */
+        if (divider) {
+          divider.style.opacity = mobile ? '0' : String(clamp(phase1 * 1.4 - 0.3, 0, 1));
+        }
 
-        /* ── Phase 2 (p 0.5→1.0): Orange curtain expands from center to cover IAT side ── */
-        const phase2 = clamp((p - 0.5) / 0.5, 0, 1);     // 0→1 during second half
-        const orangeScale = phase2;                        // 0→1 (grows from center outward)
-        orangeCurtain.style.transform = `scaleX(${orangeScale})`;
+        /* ── Phase 2 (p 0.5→1.0): Orange curtain expands to cover IAT side ── */
+        const phase2 = clamp((p - 0.5) / 0.5, 0, 1);
+        const orangeScale = phase2;
+        orangeCurtain.style.transform = `${scaleProp}(${orangeScale})`;
         orangeCurtain.style.opacity = orangeScale > 0.01 ? '1' : '0';
 
-        /* IAT column fades out as the orange curtain covers it */
+        /* IAT column fades out under the orange curtain */
         iatCol.style.opacity = String(clamp(1 - phase2 * 1.2, 0, 1));
-        iatCol.style.transform = `translate3d(${phase2 * -12}px, 0, 0)`;
+        if (mobile) {
+          iatCol.style.transform = `translate3d(0, ${phase2 * -8}px, 0)`;
+        } else {
+          iatCol.style.transform = `translate3d(${phase2 * -12}px, 0, 0)`;
+        }
 
-        /* Divider fades back out during phase 2 */
-        if (divider && phase2 > 0) {
+        /* Divider fades back out during phase 2 (desktop only) */
+        if (divider && phase2 > 0 && !mobile) {
           divider.style.opacity = String(clamp(1 - phase2 * 1.8, 0, 1));
         }
       },
