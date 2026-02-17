@@ -541,6 +541,34 @@ img { display: block; max-width: 100%; }
   background: var(--devignite);
 }
 
+/* ── Split Story links (dofollow backlinks) ── */
+.split__title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.split__title a:hover {
+  color: var(--accent);
+}
+.split__col--devignite .split__title a:hover {
+  color: var(--devignite);
+}
+.split__link {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.split__link:hover {
+  opacity: 0.75;
+}
+.split__col--devignite .split__link {
+  color: var(--devignite);
+}
+
 .split__divider {
   display: flex;
   align-items: stretch;

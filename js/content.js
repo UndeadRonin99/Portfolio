@@ -39,6 +39,7 @@ window.CONTENT = {
         'Performance-first architecture built to handle real-world load.',
       ],
       accent: 'Systems · Scale · Reliability',
+      link: 'https://iatfusion.co.za',
     },
     devignite: {
       title: 'DevIgnite',
@@ -49,6 +50,7 @@ window.CONTENT = {
         'Creative problem solving with modern stacks and bold design.',
       ],
       accent: 'Speed · Creativity · Client Delivery',
+      link: 'https://devignite.co.za',
     },
   },
 

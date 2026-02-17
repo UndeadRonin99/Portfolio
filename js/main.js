@@ -132,21 +132,23 @@
         <div class="split__col split__col--iat" data-side="iat">
           ${iatBrand}
           <span class="split__label">${iat.accent}</span>
-          <h2 class="split__title">${iat.title}</h2>
+          <h2 class="split__title"><a href="${iat.link}" target="_blank" rel="dofollow">${iat.title}</a></h2>
           <p class="split__subtitle">${iat.subtitle}</p>
           <ul class="split__points">
             ${iat.points.map(p => `<li>${p}</li>`).join('')}
           </ul>
+          <a class="split__link" href="${iat.link}" target="_blank" rel="dofollow">Visit ${iat.title} &rarr;</a>
         </div>
         <div class="split__divider" aria-hidden="true"><div class="split__divider-line"></div></div>
         <div class="split__col split__col--devignite" data-side="devignite">
           ${devigniteBrand}
           <span class="split__label">${devignite.accent}</span>
-          <h2 class="split__title">${devignite.title}</h2>
+          <h2 class="split__title"><a href="${devignite.link}" target="_blank" rel="dofollow">${devignite.title}</a></h2>
           <p class="split__subtitle">${devignite.subtitle}</p>
           <ul class="split__points">
             ${devignite.points.map(p => `<li>${p}</li>`).join('')}
           </ul>
+          <a class="split__link" href="${devignite.link}" target="_blank" rel="dofollow">Visit ${devignite.title} &rarr;</a>
         </div>
         <div class="split__curtain split__curtain--blue" aria-hidden="true"></div>
         <div class="split__curtain split__curtain--orange" aria-hidden="true"></div>
